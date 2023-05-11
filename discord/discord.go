@@ -34,9 +34,9 @@ const GoogleNewsUrl = "https://newsdata.io/api/1/news?apikey={your-api-key}&coun
 const RequestURL = "{your-webhook-url}"                                                                   // eg: https://discord.com/api/webhooks/########
 
 func NewsCheck(cT string) {
-	cloudTechnologie := cT
-	log.Println(cloudTechnologie)
-	res, err := http.Get(GoogleNewsUrl + cloudTechnologie)
+	cloudTechnology := cT
+	log.Println(cloudTechnology)
+	res, err := http.Get(GoogleNewsUrl + cloudTechnology)
 
 	if err != nil {
 		log.Fatal(err)
