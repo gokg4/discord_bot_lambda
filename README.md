@@ -2,7 +2,7 @@
 
 # discord_bot_lamda
 
-A Discord Bot(webhook) written in Go and hosted as an AWS Lambda Function.
+A Discord Bot(webhook) written in Go and hosted as an AWS Lambda Function. This Bot is designed to call the NewsData API and post latest news articles to the discord bot based on given search query. We can automate the daily articles posting by setting up AWS EventBridge to schedule event trigger targetting the lambda function.
 
 Install go from the official website - [link](https://go.dev/dl/).
 
