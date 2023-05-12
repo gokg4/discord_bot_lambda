@@ -10,7 +10,7 @@ Reference Diagram:
 
 Install go from the official website - [link](https://go.dev/dl/).
 
-AWS Lambda Documentation for Golang - [link](https://docs.aws.amazon.com/lambda/latest/dg/lambda-golang.html)
+AWS Lambda Documentation for Golang - [link](https://docs.aws.amazon.com/lambda/latest/dg/lambda-golang.html).
 
 Google News RSS Feed usage blog - [link](https://newscatcherapi.com/blog/google-news-rss-search-parameters-the-missing-documentaiton).
 
