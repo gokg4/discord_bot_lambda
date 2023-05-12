@@ -1,12 +1,14 @@
 ![GitHub](https://img.shields.io/github/license/gokg4/discord_bot_lambda) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/gokg4/discord_bot_lambda) ![GitHub repo size](https://img.shields.io/github/repo-size/gokg4/discord_bot_lambda)
 
-# discord_bot_lambda
+# Discord Bot Lambda
 
 A Discord Bot(webhook) written in Go and hosted as an AWS Lambda Function. This application is designed to call the Google News RSS feed and post latest news articles to the discord bot based on given search query. We can automate the daily articles posting by setting up AWS EventBridge to schedule event triggers targetting the lambda function.
 
-Reference Diagram:
+## Reference Diagram:
 
 ![reference diagram](AWS_Lambda.JPG)
+
+## Reference Links:
 
 Install go from the official website - [link](https://go.dev/dl/).
 
