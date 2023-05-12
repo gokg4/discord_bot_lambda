@@ -10,11 +10,13 @@ Reference Diagram:
 
 Install go from the official website - [link](https://go.dev/dl/).
 
-Google News RSS Feed usage blog - [link](https://newscatcherapi.com/blog/google-news-rss-search-parameters-the-missing-documentaiton)
+AWS Lambda Documentation for Golang - [link](https://docs.aws.amazon.com/lambda/latest/dg/lambda-golang.html)
 
-Create your Discord Bot - [link](https://support.discord.com/hc/en-us/articles/360045093012)
+Google News RSS Feed usage blog - [link](https://newscatcherapi.com/blog/google-news-rss-search-parameters-the-missing-documentaiton).
 
-Discord Webhook Documentation - [link](https://discord.com/developers/docs/resources/webhook)
+Create your Discord Bot - [link](https://support.discord.com/hc/en-us/articles/360045093012).
+
+Discord Webhook Documentation - [link](https://discord.com/developers/docs/resources/webhook).
 
 ## Installation
 
