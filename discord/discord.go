@@ -56,7 +56,7 @@ type NewsData struct {
 
 const GoogleNewsUrl1 = "https://news.google.com/rss/search?q=when:6h+intitle:"
 const GoogleNewsUrl2 = "&ceid=IN:en&hl=en-IN&gl=IN"
-const RequestURL = "https://discord.com/api/webhooks/945503020744052766/jpl2myAW6GubX3m4t14-wWJ36DyBStfS04JogbJEvv2xJh6rkKpyxQAvi1vXixeaxzoi"
+const RequestURL = "https://discord.com/api/webhooks/#########" // Get your discord webhook URL. Refer the Readme.
 
 func NewsCheck(cT string) {
 	cloudTechnologie := cT
