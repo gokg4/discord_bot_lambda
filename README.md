@@ -1,12 +1,12 @@
-![GitHub](https://img.shields.io/github/license/gokg4/discord_bot_lamda) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/gokg4/discord_bot_lamda) ![GitHub repo size](https://img.shields.io/github/repo-size/gokg4/discord_bot_lamda)
+![GitHub](https://img.shields.io/github/license/gokg4/discord_bot_lambda) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/gokg4/discord_bot_lambda) ![GitHub repo size](https://img.shields.io/github/repo-size/gokg4/discord_bot_lambda)
 
-# discord_bot_lamda
+# discord_bot_lambda
 
-A Discord Bot(webhook) written in Go and hosted as an AWS Lambda Function. This Bot is designed to call the NewsData API and post latest news articles to the discord bot based on given search query. We can automate the daily articles posting by setting up AWS EventBridge to schedule event trigger targetting the lambda function.
+A Discord Bot(webhook) written in Go and hosted as an AWS Lambda Function. This application is designed to call the Google News RSS feed and post latest news articles to the discord bot based on given search query. We can automate the daily articles posting by setting up AWS EventBridge to schedule event triggers targetting the lambda function.
 
 Install go from the official website - [link](https://go.dev/dl/).
 
-Get the NewsData API Key from - [link](https://newsdata.io/)
+Google News RSS Feed usage blog - [link](https://newscatcherapi.com/blog/google-news-rss-search-parameters-the-missing-documentaiton)
 
 Create your Discord Bot - [link](https://support.discord.com/hc/en-us/articles/360045093012)
 

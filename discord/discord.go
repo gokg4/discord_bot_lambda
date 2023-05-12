@@ -3,6 +3,7 @@ package discord
 import (
 	"bytes"
 	"encoding/json"
+	"encoding/xml"
 	"fmt"
 	"io"
 	"log"
@@ -10,33 +11,57 @@ import (
 )
 
 type NewsData struct {
-	Status       string `json:"status"`
-	TotalResults int    `json:"totalResults"`
-	Results      []struct {
-		Title       string      `json:"title"`
-		Link        string      `json:"link"`
-		Keywords    []string    `json:"keywords"`
-		Creator     interface{} `json:"creator"`
-		VideoURL    interface{} `json:"video_url"`
-		Description string      `json:"description"`
-		Content     string      `json:"content"`
-		PubDate     string      `json:"pubDate"`
-		ImageURL    string      `json:"image_url"`
-		SourceID    string      `json:"source_id"`
-		Category    []string    `json:"category"`
-		Country     []string    `json:"country"`
-		Language    string      `json:"language"`
-	} `json:"results"`
-	NextPage string `json:"nextPage"`
+	XMLName xml.Name `xml:"rss"`
+	Text    string   `xml:",chardata"`
+	Media   string   `xml:"media,attr"`
+	Version string   `xml:"version,attr"`
+	Channel struct {
+		Text          string `xml:",chardata"`
+		Generator     string `xml:"generator"`
+		Title         string `xml:"title"`
+		Link          string `xml:"link"`
+		Language      string `xml:"language"`
+		WebMaster     string `xml:"webMaster"`
+		Copyright     string `xml:"copyright"`
+		LastBuildDate string `xml:"lastBuildDate"`
+		Description   string `xml:"description"`
+		Item          []struct {
+			Text  string `xml:",chardata"`
+			Title string `xml:"title"`
+			Link  string `xml:"link"`
+			Guid  struct {
+				Text        string `xml:",chardata"`
+				IsPermaLink string `xml:"isPermaLink,attr"`
+			} `xml:"guid"`
+			PubDate     string `xml:"pubDate"`
+			Description struct {
+				Text string `xml:",chardata"`
+				A    struct {
+					Text   string `xml:",chardata"`
+					Href   string `xml:"href,attr"`
+					Target string `xml:"target,attr"`
+				} `xml:"a"`
+				Font struct {
+					Text  string `xml:",chardata"`
+					Color string `xml:"color,attr"`
+				} `xml:"font"`
+			} `xml:"description"`
+			Source struct {
+				Text string `xml:",chardata"`
+				URL  string `xml:"url,attr"`
+			} `xml:"source"`
+		} `xml:"item"`
+	} `xml:"channel"`
 }
 
-const GoogleNewsUrl = "https://newsdata.io/api/1/news?apikey={your-api-key}&country=in,us&language=en&q=" // use your api key
-const RequestURL = "{your-webhook-url}"                                                                   // eg: https://discord.com/api/webhooks/########
+const GoogleNewsUrl1 = "https://news.google.com/rss/search?q=when:6h+intitle:"
+const GoogleNewsUrl2 = "&ceid=IN:en&hl=en-IN&gl=IN"
+const RequestURL = "https://discord.com/api/webhooks/945503020744052766/jpl2myAW6GubX3m4t14-wWJ36DyBStfS04JogbJEvv2xJh6rkKpyxQAvi1vXixeaxzoi"
 
 func NewsCheck(cT string) {
-	cloudTechnology := cT
-	log.Println(cloudTechnology)
-	res, err := http.Get(GoogleNewsUrl + cloudTechnology)
+	cloudTechnologie := cT
+	log.Println(cloudTechnologie)
+	res, err := http.Get(GoogleNewsUrl1 + cloudTechnologie + GoogleNewsUrl2)
 
 	if err != nil {
 		log.Fatal(err)
@@ -52,16 +77,16 @@ func NewsCheck(cT string) {
 
 	if res.StatusCode == 200 {
 		var newsData NewsData
-		err2 := json.Unmarshal(body, &newsData)
+		err2 := xml.Unmarshal(body, &newsData)
 
 		if err2 != nil {
 			log.Fatal(err2)
 		}
 
-		log.Println(len(newsData.Results))
+		log.Println(len(newsData.Channel.Item))
 
-		for k := range newsData.Results {
-			content := map[string]string{"content": fmt.Sprintf("%s, %s", newsData.Results[k].Title, newsData.Results[k].Link)}
+		for k := range newsData.Channel.Item {
+			content := map[string]string{"content": fmt.Sprintf("%s, %s", newsData.Channel.Item[k].Title, newsData.Channel.Item[k].Link)}
 			json_data, err := json.Marshal(content)
 
 			if err != nil {
