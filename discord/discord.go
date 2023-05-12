@@ -54,9 +54,9 @@ type NewsData struct {
 	} `xml:"channel"`
 }
 
-const GoogleNewsUrl1 = "https://news.google.com/rss/search?q=when:6h+intitle:"
-const GoogleNewsUrl2 = "&ceid=IN:en&hl=en-IN&gl=IN"
-const RequestURL = "https://discord.com/api/webhooks/#########" // Get your discord webhook URL. Refer the Readme.
+const GoogleNewsUrl1 = "https://news.google.com/rss/search?q=when:6h+intitle:" // Searches for the latest articles published in the last 6 hours.
+const GoogleNewsUrl2 = "&ceid=IN:en&hl=en-IN&gl=IN"                            // Additional parameters for Language and Country.
+const RequestURL = "https://discord.com/api/webhooks/#########"                // Get your discord webhook URL. Refer the Readme.
 
 func NewsCheck(cT string) {
 	cloudTechnologie := cT

@@ -9,7 +9,7 @@ import (
 )
 
 func handler(ctx context.Context, request events.APIGatewayProxyRequest) error {
-	cloudTechnologies := []string{"Cloud%20Computing", "Amazon%20Web%20Services", "Google%20Cloud", "Azure"}
+	cloudTechnologies := []string{"Cloud%20Computing", "Amazon%20Web%20Services", "Google%20Cloud", "Azure"} // You can change to some other topics to get relevant articles.
 	for _, v := range cloudTechnologies {
 		discord.NewsCheck(v)
 	}
