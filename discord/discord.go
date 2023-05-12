@@ -59,9 +59,9 @@ const GoogleNewsUrl2 = "&ceid=IN:en&hl=en-IN&gl=IN"                            /
 const RequestURL = "https://discord.com/api/webhooks/#########"                // Get your discord webhook URL. Refer the Readme.
 
 func NewsCheck(cT string) {
-	cloudTechnologie := cT
-	log.Println(cloudTechnologie)
-	res, err := http.Get(GoogleNewsUrl1 + cloudTechnologie + GoogleNewsUrl2)
+	cloudTechnology := cT
+	log.Println(cloudTechnology)
+	res, err := http.Get(GoogleNewsUrl1 + cloudTechnology + GoogleNewsUrl2)
 
 	if err != nil {
 		log.Fatal(err)
