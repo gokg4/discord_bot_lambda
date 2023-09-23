@@ -6,7 +6,7 @@ A Discord Bot(webhook) written in Go and hosted as an AWS Lambda Function. This 
 
 ## Reference Diagram:
 
-![reference diagram](AWS_Lambda.JPG)
+![reference diagram](AWS_Lambda.png)
 
 ## Reference Links:
 
