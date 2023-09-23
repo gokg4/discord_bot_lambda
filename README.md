@@ -20,25 +20,19 @@ Create your Discord Bot - [link](https://support.discord.com/hc/en-us/articles/3
 
 Discord Webhook Documentation - [link](https://discord.com/developers/docs/resources/webhook).
 
-## Installation
-
-Give a Try, clone this repository and run the following command in the terminal.
-
-```go run main.go```
+## Build
 
 Build, Compile and Zip with the following command.
 
-```GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o main main.go```
+```GOARCH=amd64 GOOS=linux CGO_ENABLED=0 go build -tags lambda.norpc -o bootstrap main.go```
 
-```zip -r function.zip main```
+```zip myFunction.zip bootstrap```
 
 ## Usage
 
-Once built and compiled you can run from command line using the following command.
-
-```./main```
-
 Upload the Zip file to AWS Lambda Function.
+
+Create an AWS EventBridge schedule event to trigger the lambda function - [link](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-run-lambda-schedule.html)
 
 ## Contributors
 
